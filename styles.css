@@ -1,0 +1,91 @@
+.lotus {
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
+  position: relative;
+  margin: 100px;
+}
+
+/* lotus children */
+.lotus > div {
+  position: absolute;
+  width: 199.8px;
+  height: 199.8px;
+  border: 1px solid;
+  border-radius: 0 70% 50% 70%;
+  left: 0;
+  top: 70px;
+  transform: rotate(45deg);
+  transform-origin: 150px 150px;
+  animation-duration: 9000ms;
+  animation-fill-mode: forwards;
+}
+
+/* animations */
+.lotus > div:nth-child(1) {
+  background-color: rgba(255, 0, 0, 0.5);
+  animation-name: bloom-1;
+}
+
+@keyframes bloom-1 {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+.lotus > div:nth-child(2) {
+  background-color: rgba(255, 255, 0, 0.781);
+  animation-name: bloom-2;
+}
+
+@keyframes bloom-2 {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.lotus > div:nth-child(3) {
+  background-color: rgba(35, 211, 35, 0.5);
+  animation-name: bloom-3;
+}
+
+@keyframes bloom-3 {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+.lotus > div:nth-child(4) {
+  background-color: rgba(0, 255, 255, 0.5);
+  animation-name: bloom-4;
+}
+
+@keyframes bloom-4 {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+.lotus > div:nth-child(5) {
+  background-color: rgba(23, 23, 241, 0.5);
+  animation-name: bloom-5;
+}
+
+@keyframes bloom-5 {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(135deg);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,121 @@
+// sass variables
+
+$size: 300px;
+$deg: 45deg;
+$red: rgba(255, 0, 0, 0.5);
+$yellow: rgba(255, 255, 0, 0.781);
+$green: rgba(35, 211, 35, 0.5);
+$blue: rgba(0, 255, 255, 0.5);
+$purple: rgba(23, 23, 241, 0.5);
+
+$colors: $red, $yellow, $green, $blue, $purple;
+
+
+.lotus {
+  width: $size;
+  height: $size;
+  border: 1px solid;
+  position: relative; 
+  margin: 100px;
+}
+
+/* lotus children */
+
+.lotus > div {
+  position: absolute;
+  width: $size * 0.666;
+  height: $size * 0.666;
+  border: 1px solid;
+  border-radius: 0 70% 50% 70%;
+  left: 0;
+  top: 70px;
+  transform: rotate($deg);
+  transform-origin: $size * 0.5 $size * 0.5;
+  animation-duration: 9000ms;
+  animation-fill-mode: forwards;
+}
+
+// .lotus > div:nth-child(1) {
+//   background-color: $red;
+//   animation-name: bloom-1;
+// }
+
+// .lotus > div:nth-child(2) {
+//   background-color: $yellow;
+//   animation-name: bloom-2;
+// }
+
+// .lotus > div:nth-child(3) {
+//   background-color: $green;
+// }
+
+// .lotus > div:nth-child(4) {
+//   background-color: $blue;
+//   animation-name: bloom-4;
+// }
+
+// .lotus > div:nth-child(5) {
+//   background-color: $purple;
+//   animation-name: bloom-5;
+// }
+
+
+/* animations */
+
+@for $n from 1 through 5 {
+  // lotus children
+  .lotus > div:nth-child(#{$n}) {
+    background-color: nth($colors, $n);
+    animation-name: bloom-#{$n};
+  }
+  // animations
+  @keyframes bloom-#{$n} {
+    0% {
+      transform: rotate($deg);
+    }
+  
+    100% {
+      transform: rotate(($n - 2) * $deg);
+    }
+  }
+}
+
+// @keyframes bloom-1 {
+//   0% {
+//     transform: rotate($deg);
+//   }
+
+//   100% {
+//     transform: rotate(-$deg);
+//   }
+// }
+
+// @keyframes bloom-2 {
+//   0% {
+//     transform: rotate($deg);
+//   }
+
+//   100% {
+//     transform: rotate(0);
+//   }
+// }
+
+// @keyframes bloom-4 {
+//   0% {
+//     transform: rotate($deg);
+//   }
+
+//   100% {
+//     transform: rotate($deg * 2);
+//   }
+// }
+
+// @keyframes bloom-5 {
+//   0% {
+//     transform: rotate($deg);
+//   }
+
+//   100% {
+//     transform: rotate($deg * 3);
+//   }
+// }
